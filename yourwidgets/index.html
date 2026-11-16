@@ -1,208 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Your Widgets</title>
-
-	<style type="text/css">
-			* {box-sizing: border-box}
-			body {font-family: Arial, Helvetica, sans-serif; margin:0}
-			.mySlides {display: none}
-			img {vertical-align: middle;}
-
-			/* Slideshow container */
-			.slideshow-container {
-			  max-width: 1000px;
-			  position: relative;
-			  margin: auto;
-			}
-
-			/* Next & previous buttons */
-			.prev, .next {
-			  cursor: pointer;
-			  position: absolute;
-			  top: 50%;
-			  width: auto;
-			  padding: 16px;
-			  margin-top: -22px;
-			  color: white;
-			  font-weight: bold;
-			  font-size: 18px;
-			  transition: 0.6s ease;
-			  border-radius: 0 3px 3px 0;
-			  user-select: none;
-			}
-
-			/* Position the "next button" to the right */
-			.next {
-			  right: 0;
-			  border-radius: 3px 0 0 3px;
-			}
-
-			/* On hover, add a black background color with a little bit see-through */
-			.prev:hover, .next:hover {
-			  background-color: rgba(0,0,0,0.8);
-			}
-
-			/* Caption text */
-			.text {
-			  color: #f2f2f2;
-			  font-size: 15px;
-			  padding: 8px 12px;
-			  position: absolute;
-			  bottom: 8px;
-			  width: 100%;
-			  text-align: center;
-			}
-
-			/* Number text (1/3 etc) */
-			.numbertext {
-			  color: #f2f2f2;
-			  font-size: 12px;
-			  padding: 8px 12px;
-			  position: absolute;
-			  top: 0;
-			}
-
-			/* The dots/bullets/indicators */
-			.dot {
-			  cursor: pointer;
-			  height: 15px;
-			  width: 15px;
-			  margin: 0 2px;
-			  background-color: #bbb;
-			  border-radius: 50%;
-			  display: inline-block;
-			  transition: background-color 0.6s ease;
-			}
-
-			.active, .dot:hover {
-			  background-color: #717171;
-			}
-
-			/* Fading animation */
-			.fade {
-			  -webkit-animation-name: fade;
-			  -webkit-animation-duration: 1.5s;
-			  animation-name: fade;
-			  animation-duration: 1.5s;
-			}
-
-			@-webkit-keyframes fade {
-			  from {opacity: .4} 
-			  to {opacity: 1}
-			}
-
-			@keyframes fade {
-			  from {opacity: .4} 
-			  to {opacity: 1}
-			}
-
-			/* On smaller screens, decrease text size */
-			@media only screen and (max-width: 300px) {
-			  .prev, .next,.text {font-size: 11px}
-			}
-	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Widgets – Clock, calendar and quote widgets for iPhone</title>
+  <meta name="description" content="Your Widgets lets you design clock, calendar and quote widgets for your iPhone Home Screen with your own photos, colours and fonts. Help, support and contact.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="apple-touch-icon" href="img/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body style="background: black;padding: 20px;">
+<body>
 
-<div style="text-align: center;color: white;font-size: 24px;padding: 20px;">
-	<img src="img/appstore.png" style="width: 50px;border-radius: 5px;">
-	Your Widgets
-	<br>
-	<div style="font-size: 16px;margin-top: 20px;"><i>Custom Home Screen Widgets</i></div>
-</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon.png" alt="">Your Widgets</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#help">Help</a>
+      <a href="privacy/">Privacy</a>
+      <a class="optional" href="tos/">Terms</a>
+    </nav>
+  </div>
+</header>
 
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Clock, calendar and quote widgets you design yourself.</h1>
+        <p class="lede">Pick a style from the Widget Library, then make it yours with your own photos, colours and fonts.</p>
+        <a class="store-button" href="https://apps.apple.com/app/id1535019258">Get it on the App Store</a>
+        <p class="fineprint">Free to download for iPhone.</p>
+      </div>
 
-<hr style="height: 0.5px;margin: 20px;color: #fefefe;opacity: 0.5;">
+      <div class="tiles" role="img" aria-label="Four example widgets: a clock, today's date, this month's calendar and a quote">
+        <div class="tile tile-clock" aria-hidden="true">
+          <svg viewBox="0 0 100 100" id="clock">
+            <g id="ticks"></g>
+            <line class="hand hour" x1="50" y1="50" x2="50" y2="28" id="hour"/>
+            <line class="hand minute" x1="50" y1="50" x2="50" y2="16" id="minute"/>
+            <circle cx="50" cy="50" r="3.6" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="tile tile-date" aria-hidden="true">
+          <div class="upright"><span class="day-num" id="dayNum">16</span><span class="day-name" id="dayName">Monday</span></div>
+        </div>
+        <div class="tile tile-calendar" aria-hidden="true">
+          <div class="month" id="monthName">November</div>
+          <div class="days" id="days"></div>
+        </div>
+        <div class="tile tile-quote" aria-hidden="true">
+          <div>
+            <blockquote id="quote">Wisdom begins in wonder.</blockquote>
+            <span class="author" id="author">Socrates</span>
+          </div>
+          <div class="time" id="time">12:00</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div style="color: white;padding: 20px;font-size: 16px;line-height: 1.5;"><p>Your Widgets lets you add beautiful, stylish and useful widgets to your home screen. With a variety of designs and styles in the Widget Library, you can either choose an existing style or personalize them to suit your homescreen.</p>
+  <section class="section alt">
+    <div class="wrap">
+      <h2>On your Home Screen</h2>
+      <p class="intro">Widgets come in small, medium and large sizes, so you can fit them around your apps.</p>
+      <ul class="screens">
+        <li><figure><img src="img/screen-4.jpg" alt="The Widget Library in the app, showing quote, clock and calendar designs" width="526" height="900" loading="lazy"><figcaption><strong>A library of designs</strong><span>Start from a ready-made clock, calendar or quote widget.</span></figcaption></figure></li>
+        <li><figure><img src="img/screen-5.jpg" alt="Personalizing a calendar widget with background colour, text colour and font" width="526" height="900" loading="lazy"><figcaption><strong>Make it yours</strong><span>Choose your own photo, background, text colour and font.</span></figcaption></figure></li>
+        <li><figure><img src="img/screen-2.jpg" alt="A quote widget with a personal photo on an iPhone Home Screen" width="526" height="900" loading="lazy"><figcaption><strong>A quote at every glance</strong><span>Quote widgets show a new quote every minute.</span></figcaption></figure></li>
+        <li><figure><img src="img/screen-1.jpg" alt="A calendar widget with a photo background on an iPhone Home Screen" width="526" height="900" loading="lazy"><figcaption><strong>Calendars and clocks</strong><span>Keep the month, date and time in view.</span></figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
 
-<p>Set up widgets for your iOS homescreen within minutes.</p>
+  <section class="section" id="help">
+    <div class="wrap help">
+      <h2>Help</h2>
+      <div class="faq">
+        <details open>
+          <summary>How do I add a widget to my Home Screen?</summary>
+          <div class="answer">
+            <ol>
+              <li>Open Your Widgets and choose a design from the Widget Library.</li>
+              <li>On your Home Screen, touch and hold an empty area until the apps jiggle.</li>
+              <li>Tap <strong>Edit</strong> or <strong>+</strong> in the top corner, then <strong>Add Widget</strong>.</li>
+              <li>Search for <strong>Your Widgets</strong>, pick a size and tap <strong>Add Widget</strong>.</li>
+            </ol>
+          </div>
+        </details>
+        <details>
+          <summary>How do I change the design my widget shows?</summary>
+          <div class="answer"><p>Open the app, choose a different design in the Widget Library or personalize one, and save it. The widget on your Home Screen updates to show your latest choice.</p></div>
+        </details>
+        <details>
+          <summary>How do I restore my subscription on a new iPhone?</summary>
+          <div class="answer"><p>Make sure you're signed in with the same Apple Account you subscribed with. Then open the app, go to the subscription screen and tap <strong>Restore</strong>.</p></div>
+        </details>
+        <details>
+          <summary>How do I cancel my subscription?</summary>
+          <div class="answer"><p>Subscriptions are managed by Apple. On your iPhone, open <strong>Settings</strong>, tap your name, then <strong>Subscriptions</strong>, and choose Your Widgets. Cancel at least 24 hours before your renewal date to avoid the next charge.</p></div>
+        </details>
+        <details>
+          <summary>What happens to the photos I use?</summary>
+          <div class="answer"><p>Photos you add to a widget are stored on your iPhone and aren't uploaded or shared. Read the <a href="privacy/">privacy policy</a> for details.</p></div>
+        </details>
+      </div>
+      <p class="contact">Still need help? Email <a href="mailto:info@versionn.com">info@versionn.com</a></p>
+    </div>
+  </section>
+</main>
 
-<p><b>WIDGET LIBRARY</b><br>
-Offers great variety of styles and designs in all supported widget sizes.</p>
-
-<p><b>PERSONALIZE YOUR WIDGETS</b><br>
-Choose a beautiful design from the Widget Library to set them to your home screen. You also have an option to personalize widget design from the library with your photos, colors and fonts.</p>
-
-<p><b>CALENDAR, CLOCK & INSPIRATIONAL QUOTES</b><br>
-Widgets feature time, date or calendars which you can personalize for your home screens. Selected widgets also feature inspirational quotes which change every minute. Now at every glance you get some wisdom!</p>
-</div>
-
-<div class="slideshow-container" style="text-align: center;">
-
-<div class="mySlides fade">
-  <img src="img/YourWidget4.png" style="width:60%">
-</div>
-
-<div class="mySlides fade">
-  <img src="img/YourWidget2.png" style="width:60%">
-</div>
-
-<div class="mySlides fade">
-  <img src="img/YourWidget3.png" style="width:60%">
-</div>
-
-<div class="mySlides fade">
-  <img src="img/YourWidget1.png" style="width:60%">
-</div>
-
-<div class="mySlides fade">
-  <img src="img/YourWidget5.png" style="width:60%">
-</div>
-
-<!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-
-</div>
-
-
-<br>
-
-<div style="text-align:center;">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-  <span class="dot" onclick="currentSlide(4)"></span> 
-  <span class="dot" onclick="currentSlide(5)"></span> 
-</div>
-
-<hr style="height: 0.5px;margin-top: 40px;color: #fefefe;opacity: 0.5;">
-
-<div style="color: white;font-size: 12px;padding: 5vh 20px;text-align: center;"><p>For support or any inquiries, email <a href="mailto:info@versionn.com" style="color:white;">info@versionn.com</a></p>
-<p><a href="privacy/" style="color:white;">Privacy Policy</a> &nbsp;·&nbsp; <a href="tos/" style="color:white;">Terms and Conditions</a></p>
-
-</div>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Kitepixel</span>
+    <nav aria-label="Footer">
+      <a href="privacy/">Privacy Policy</a>
+      <a href="tos/">Terms and Conditions</a>
+      <a href="../">More apps</a>
+    </nav>
+  </div>
+</footer>
 
 <script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+(function () {
+  var ns = "http://www.w3.org/2000/svg";
+  var ticks = document.getElementById("ticks");
+  for (var i = 0; i < 60; i++) {
+    var major = i % 5 === 0;
+    var l = document.createElementNS(ns, "line");
+    l.setAttribute("x1", 50); l.setAttribute("x2", 50);
+    l.setAttribute("y1", major ? 5 : 6); l.setAttribute("y2", major ? 12 : 9);
+    l.setAttribute("class", major ? "tick" : "tick minor");
+    l.setAttribute("transform", "rotate(" + i * 6 + " 50 50)");
+    ticks.appendChild(l);
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+
+  // A few short quotes from the app's own collection; one per minute, like the widget.
+  var quotes = [
+    ["Wisdom begins in wonder.", "Socrates"],
+    ["Be a voice, not an echo.", "Josh Billings"],
+    ["If there is no wind, row.", "Latin proverb"],
+    ["My life is my message.", "Mahatma Gandhi"],
+    ["Count your blessings.", "Og Mandino"],
+    ["Less is more.", "Ludwig Mies van der Rohe"]
+  ];
+
+  var built = "";
+  function render() {
+    var now = new Date();
+    var h = now.getHours(), m = now.getMinutes();
+    document.getElementById("hour").setAttribute("transform", "rotate(" + ((h % 12) * 30 + m * 0.5) + " 50 50)");
+    document.getElementById("minute").setAttribute("transform", "rotate(" + m * 6 + " 50 50)");
+    document.getElementById("time").textContent = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    document.getElementById("dayNum").textContent = now.getDate();
+    document.getElementById("dayName").textContent = now.toLocaleDateString([], { weekday: "long" });
+    var q = quotes[(now.getHours() * 60 + m) % quotes.length];
+    document.getElementById("quote").textContent = q[0];
+    document.getElementById("author").textContent = q[1];
+    document.getElementById("year").textContent = now.getFullYear();
+
+    var key = now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate();
+    if (key !== built) {
+      built = key;
+      document.getElementById("monthName").textContent = now.toLocaleDateString([], { month: "long" });
+      var first = new Date(now.getFullYear(), now.getMonth(), 1).getDay();
+      var count = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+      var html = "";
+      for (var b = 0; b < first; b++) html += "<span></span>";
+      for (var d = 1; d <= count; d++) html += '<span' + (d === now.getDate() ? ' class="today"' : '') + '>' + d + '</span>';
+      document.getElementById("days").innerHTML = html;
+    }
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
+  render();
+  setTimeout(function () { render(); setInterval(render, 60000); }, (60 - new Date().getSeconds()) * 1000);
+})();
 </script>
 </body>
 </html>
